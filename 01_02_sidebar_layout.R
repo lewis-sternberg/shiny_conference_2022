@@ -2,10 +2,11 @@
 library(shiny)
 
 ui <- fluidPage(
-  sidebarLayout(
+  sidebarLayout( #layout options, shiny has some prebuilt layouts
     sidebarPanel(
       h3("Sidebar Title"),
-      "Sidebar"
+      "Sidebar",
+      width = 2 #full width in this layout is 12
     ),
     mainPanel(
       div("I'm in the main panel"),

@@ -2,6 +2,7 @@ library(shiny)
 library(shinyGizmo)
 library(glue)
 
+setwd("C:/Users/LewisSternberg/OneDrive - CEN-ESG/Desktop/git/shiny_conference_2022/")
 source("tools.R")
 
 column_ui <- function(id, name) {
@@ -20,14 +21,14 @@ column_ui <- function(id, name) {
 
 column_server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    showModalUI("modal")
+    showModalUI("modal") #this opens modal right after it is open
     
     observeEvent(input[["delete"]], {
       removeUI(glue("#{id}"))
     })
     
     observeEvent(input[["confirm"]], {
-      print(reactiveValuesToList(input))
+      print(reactiveValuesToList(input)) #input object of modal  is different to server - this takes all the values within the modal and converts them to a list and then we can use them later on
       print("modal closed")
     })
     

@@ -4,7 +4,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       h3("Table Generator"),
-      numericInput("nrow", "Number of rows", value = 50, min = 1, max = 1000, step = 1),
+      numericInput("nrow", "Number of rows", value = 50, min = 1, max = 1000, step = 1), #by removing equals from nrow, can be accessed with $
       div(id = "variables"),
       div(
         id = "define-vars",

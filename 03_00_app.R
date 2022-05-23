@@ -15,7 +15,7 @@ ui <- fluidPage(
           actionButton("new", NULL, icon = icon("plus"), width = "100%")  
         )
       ),
-      conditionalPanel(
+      conditionalPanel( #action button is conditonal on nrow
         "input.nrow > 0",
         actionButton("run", "Generate", width = "100%")
       )

@@ -65,7 +65,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   
   my_table <- reactiveVal(NULL)
-  session$userData$modal_closed <- reactiveVal(1)
+  session$userData$modal_closed <- reactiveVal(1) 
   
   observeEvent(input$new, {
     id <- genid()

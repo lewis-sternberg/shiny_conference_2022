@@ -8,7 +8,7 @@ source("tools.R")
 ui <- fluidPage(
   tags$head(
     shiny::tags$script(type = "text/javascript", src = "hidden_mode.js"),
-    tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
+    tags$link(rel = "stylesheet", type = "text/css", href = "custom.css") #can change the css the change the layout eg. colours #easy way to change look
   ),
   sidebarLayout(
     sidebarPanel(

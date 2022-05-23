@@ -1,7 +1,7 @@
 library(dplyr)
 
 genid <- function() {
-  paste(sample(letters, 5), collapse = "")
+  paste(sample(letters, 5), collapse = "") #used to generate random ID of model
 }
 
 get_state <- function(input) {

@@ -19,15 +19,15 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  plot_data <- reactiveVal(NULL)
+  plot_data <- reactiveVal(NULL) #inital value of plot is null
   
   observeEvent(input$x_max, {
     if (identical(input$x_max > 0, TRUE)) {
       x <- seq(0, input$x_max, by = 0.1)
       df <- data.frame(x = x, y = sin(x))
-      plot_data(df)
+      plot_data(df) #update table with new reactive value
     } else {
-      plot_data(NULL)
+      plot_data(NULL) #else re assign Null reactive value - chart always needs some value
     }
   })
   

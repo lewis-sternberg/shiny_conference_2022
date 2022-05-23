@@ -3,10 +3,10 @@
 library(shiny)
 
 ui <- fluidPage(
-  actionButton(
-    inputId = "my_button", label = "Click Me"
+  actionButton( #functions are used for these items 
+    inputId = "my_button", label = "Click Me" #every input controller must have a unique input ID
   ),
-  numericInput(
+  numericInput( #adding user inputs into the page - could have multiple types of options
     inputId = "my_number", label = "Place number here", value = 1, min = 1, max = 10, step = 1
   ),
   textInput(

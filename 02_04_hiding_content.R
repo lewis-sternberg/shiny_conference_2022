@@ -1,11 +1,16 @@
+#Can hide other inputs, if others are not value
+
+
 library(shiny)
 
 ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       numericInput("x_max", "Maximum x axis value", value = 10),
-      conditionalPanel(
-        "input.x_max > 0",
+      #conditionalPanel is written in javascript
+      conditionalPanel( #this takes two parameters, conditions which wants to be met inorder to display the content (second argument)
+        #when hidden will keep the last value
+        "input.x_max > 0", #need to use a . instead of $ as it is using JS
         textInput("title", "Title")
       )
     ),
@@ -40,3 +45,4 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+

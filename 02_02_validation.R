@@ -14,7 +14,7 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   output$sine <- renderPlot({
-    validate(need(input$x_max > 0, message = "No valid data"))
+    validate(need(input$x_max > 0, message = "No valid data")) #can have validation within input
     plot_data <- data.frame(
       x = seq(0, input$x_max, by = 0.1),
       y = sin(seq(0, input$x_max, by = 0.1))
@@ -23,7 +23,7 @@ server <- function(input, output, session) {
   })
   
   output$plot_table <- renderTable({
-    req(input$x_max > 0)
+    req(input$x_max > 0) #req function does something similar for data validation
     plot_data <- data.frame(
       x = seq(0, input$x_max, by = 0.1),
       y = sin(seq(0, input$x_max, by = 0.1))

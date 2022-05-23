@@ -3,9 +3,11 @@ library(shinyGizmo)
 library(glue)
 library(magrittr)
 
+#must set wd
+setwd("C:/Users/LewisSternberg/OneDrive - CEN-ESG/Desktop/git/shiny_conference_2022/")
 source("tools.R")
 
-column_ui <- function(id, name) {
+column_ui <- function(id, name) { #define functions - creates tool panel for variable
   wellPanel(
     id = id,
     modalDialogUI(
@@ -64,7 +66,7 @@ server <- function(input, output, session) {
   
   observeEvent(input$new, {
     id <- genid()
-    insertUI(
+    insertUI( #this generates the application, the output of the column ui function - does not do this automatically
       "#variables",
       where = "beforeEnd",
       column_ui(id, input$name),
